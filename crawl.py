@@ -16,8 +16,7 @@ def dataExtract(url):
 	r = requests.get(url)
 	soup = bs(r.content,'html5lib')
 	string = ''
-	for links in soup.find_all('src'):
-		print('http://keralaplants.in/'+links[1].split('src')[1].strip('/>'))
+	print("image url :/http://keralaplants/"+soup.find_all('img')[1]['src']) 
 	for link in soup.find_all('span'):
 		print(link.text)
 data_link = releventLinks(url)
